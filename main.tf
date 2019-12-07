@@ -1,12 +1,12 @@
 # Download the latest Time Management Image
 module "image" {
-  source = "./image"
+  source = "./Image"
   image  = "${var.image}"
 }
 
 # Start the Container
 module "container" {
-  source   = "./container"
+  source   = "./Container"
   image    = "${module.image.image_out}"
   name     = "${var.container_name}"
   int_port = "${var.int_port}"
